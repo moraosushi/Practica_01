@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8566254432419214897}
   - component: {fileID: 4705883999056787860}
   - component: {fileID: 7397830726204886366}
+  - component: {fileID: 6610298236866628773}
   m_Layer: 0
   m_Name: rpgpp_ag_building_closed_08
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6610298236866628773
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9055229949866552459}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6940379739182306628, guid: d56d906deee8fcb43a4197a7c4397999, type: 3}

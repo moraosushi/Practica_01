@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5995710543200892319}
   - component: {fileID: 7249336819131791930}
   - component: {fileID: 4863366584801054448}
+  - component: {fileID: 7068285903070290150}
   m_Layer: 0
   m_Name: rpgpp_ag_table_05
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7068285903070290150
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376774178682302245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1681538, y: 0.7981128, z: 1.8527195}
+  m_Center: {x: -0.016573459, y: 0.3990564, z: -0.009937972}

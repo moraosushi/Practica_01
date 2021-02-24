@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!136 &1276791660995407471
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8622272615750724559}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.8440452
+  m_Height: 5.2503157
+  m_Direction: 1
+  m_Center: {x: 0.21851301, y: 2.6232963, z: 0.10625899}
 --- !u!1001 &8892672556036478622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,6 +21,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a6d2c9b3271ae394ba64298062d4424d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6d2c9b3271ae394ba64298062d4424d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21,6 +40,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a6d2c9b3271ae394ba64298062d4424d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6d2c9b3271ae394ba64298062d4424d,
         type: 3}
@@ -39,16 +63,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6d2c9b3271ae394ba64298062d4424d,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a6d2c9b3271ae394ba64298062d4424d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a6d2c9b3271ae394ba64298062d4424d,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -64,6 +78,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: a6d2c9b3271ae394ba64298062d4424d,
         type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a6d2c9b3271ae394ba64298062d4424d,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cb9b59ef80d017c4f9558f3f2d166326, type: 2}
@@ -74,3 +93,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6d2c9b3271ae394ba64298062d4424d, type: 3}
+--- !u!1 &8622272615750724559 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a6d2c9b3271ae394ba64298062d4424d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8892672556036478622}
+  m_PrefabAsset: {fileID: 0}
