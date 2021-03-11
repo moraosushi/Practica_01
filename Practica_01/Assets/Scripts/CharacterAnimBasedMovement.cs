@@ -18,7 +18,7 @@ public class CharacterAnimBasedMovement : MonoBehaviour
     public string motionParam = "motion";
     public string mirrorIdleParam = "mirrorIdle";
     public string turn180Param = "turn180";
-    public string idleParam = "idle_type";
+    public string idleParam = "Idle_random";
 
     [Header("Animation Smoothing")]
     [Range(0, 1f)]
@@ -33,6 +33,7 @@ public class CharacterAnimBasedMovement : MonoBehaviour
     private Animator animator;
     private bool mirrorIdle;
     private bool turn180;
+    
    
 
     void Start()
@@ -53,20 +54,28 @@ public class CharacterAnimBasedMovement : MonoBehaviour
 
         }
         //animaciones idle random en periodo de tiempo
+     
         if (!Input.anyKey)
         {
-            idleTime = idleTime + 1;
-            print(idleTime);
+            idleTime += 1;
+            //print(idleTime);
         }
         else
         {
             idleTime = 0;
         }
-        if (idleTime == Random.Range(450, 1200))
+        int randomIdle = Random.Range(1, 5);
+        
+
+        if (idleTime == Random.Range(150, 400))
         {
-            animator.SetFloat("idle_type", Random.Range(0, 5));
+            animator.SetTrigger("Idle_random");
+            animator.SetInteger("IdleType", randomIdle);
+            print("idle random");
+            idleTime = 0;
+           // return;
+        
         }
-      
 
         //dash only if character has reached maxSpeed (animator parameter value)
         if (Speed >= Speed - rotationThreshold && dash)
@@ -112,7 +121,7 @@ public class CharacterAnimBasedMovement : MonoBehaviour
         }
    
     }
-    private void OnAnimatorIK(int layerIndex)
+       private void OnAnimatorIK(int layerIndex)
     {
         if (Speed < rotationThreshold) return;
         float distanceToLeftFoot = Vector3.Distance(transform.position, animator.GetIKPosition(AvatarIKGoal.LeftFoot));
