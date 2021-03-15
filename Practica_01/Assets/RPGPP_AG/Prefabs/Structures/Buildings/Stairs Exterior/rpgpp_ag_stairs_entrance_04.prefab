@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 892342593079083537}
   - component: {fileID: 4309354719322639796}
   - component: {fileID: 2029170703092283774}
+  - component: {fileID: -7615688638497132406}
   m_Layer: 0
   m_Name: rpgpp_ag_stairs_entrance_04
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-7615688638497132406
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516203601662466219}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5770860014396478283, guid: e6545d01056732a409fdb52681e3f76c, type: 3}

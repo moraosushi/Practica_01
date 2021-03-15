@@ -26,6 +26,13 @@ public class CharacterAnimBasedMovement : MonoBehaviour
     [Range(0, 1f)]
     public float StopAnimTime = 0.15f;
 
+    [Header("Wall Detection")]
+    public LayerMask obstacleLayers;
+    public float wallStopThreshold = 30f;
+    public float wallStopDistance = 0.9f;
+    public float rayHeight = 0.5f;
+
+
     private Ray wallRay = new Ray();
     private float Speed;
     private Vector3 desiredMoveDirection;
@@ -47,8 +54,8 @@ public class CharacterAnimBasedMovement : MonoBehaviour
         //calculate the input magnitude
         Speed = new Vector2(hInput, vInput).normalized.sqrMagnitude;
 
-        //jump input
-        if (Input.GetKeyDown(KeyCode.Space))
+      //jump input
+        if (Input.GetButton("Jump"))
         {
             animator.SetTrigger("jump");
 
@@ -58,7 +65,7 @@ public class CharacterAnimBasedMovement : MonoBehaviour
         if (!Input.anyKey)
         {
             idleTime += 1;
-            //print(idleTime);
+            print(idleTime);
         }
         else
         {
@@ -67,14 +74,16 @@ public class CharacterAnimBasedMovement : MonoBehaviour
         int randomIdle = Random.Range(1, 5);
         
 
-        if (idleTime == Random.Range(150, 400))
+        if (idleTime == Random.Range(165, 440))
         {
             animator.SetTrigger("Idle_random");
             animator.SetInteger("IdleType", randomIdle);
             print("idle random");
+            idleTime = 0;                  
+        }
+        else if (idleTime >= 440)
+        {
             idleTime = 0;
-           // return;
-        
         }
 
         //dash only if character has reached maxSpeed (animator parameter value)
@@ -113,6 +122,27 @@ public class CharacterAnimBasedMovement : MonoBehaviour
             animator.SetBool(turn180Param, turn180);
             //move character
             animator.SetFloat(motionParam, Speed, StartAnimTime, Time.deltaTime);
+
+            //wall detection
+            Vector3 rayOrigin = transform.position;
+            rayOrigin.y += rayHeight;
+
+            wallRay.origin = rayOrigin;
+            wallRay.direction = transform.forward;
+            bool wallDetected = Vector3.Angle(transform.forward, desiredMoveDirection) < wallStopThreshold && Physics.Raycast(wallRay, wallStopDistance, obstacleLayers);
+            Debug.DrawRay(rayOrigin, transform.forward, Color.red);
+
+            if (wallDetected)
+            {
+                //simple foot ik for idle animation
+                animator.SetBool(mirrorIdleParam, mirrorIdle);
+                //Stop the character
+                animator.SetFloat(motionParam, 0f, StopAnimTime, Time.deltaTime);
+                Debug.DrawRay(rayOrigin, transform.forward, Color.yellow);
+            }
+            else
+                //Move character
+                animator.SetFloat(motionParam, Speed, StartAnimTime, Time.deltaTime);
         }
         else if (Speed < rotationThreshold)
         {

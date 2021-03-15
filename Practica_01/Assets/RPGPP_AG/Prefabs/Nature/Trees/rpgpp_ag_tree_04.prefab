@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!136 &8610320375799291156
+--- !u!136 &6515422815186081630
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,10 +10,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 3.1240582
-  m_Height: 7.891563
+  m_Radius: 0.4
+  m_Height: 5.897196
   m_Direction: 1
-  m_Center: {x: 0.7197727, y: 3.9457815, z: 0.1656344}
+  m_Center: {x: -0.05, y: 2.73, z: 0.05}
 --- !u!1001 &258592961169334929
 PrefabInstance:
   m_ObjectHideFlags: 0

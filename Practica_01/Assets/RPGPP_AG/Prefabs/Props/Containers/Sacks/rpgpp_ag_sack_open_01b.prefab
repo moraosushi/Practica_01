@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &1252354439523139343
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714652900797822921}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -9144444559429354219, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3, type: 3}
 --- !u!1001 &5903749539119270552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,23 +23,33 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -397.83426
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 105.66323
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -337.2736
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
         type: 3}
@@ -36,16 +60,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
         type: 3}
@@ -72,5 +86,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: rpgpp_ag_sack_open_01b
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3, type: 3}
+--- !u!1 &6714652900797822921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3dfcbcd775ad2b6478d0cc0813d6a9b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5903749539119270552}
+  m_PrefabAsset: {fileID: 0}
