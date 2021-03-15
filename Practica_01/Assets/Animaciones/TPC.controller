@@ -493,7 +493,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: Jump
   m_Speed: 1
-  m_CycleOffset: 0
+  m_CycleOffset: 0.5
   m_Transitions:
   - {fileID: -1157112314775034735}
   - {fileID: -4690975905288656450}
@@ -511,7 +511,7 @@ AnimatorState:
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: motion
 --- !u!1107 &-2875856784440882559
 AnimatorStateMachine:
   serializedVersion: 5
