@@ -36,7 +36,7 @@ MonoBehaviour:
   m_Name: Movie
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 4
+  take: 3
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
@@ -44,7 +44,7 @@ MonoBehaviour:
       m_Leaf: Recordings
       m_ForceAssetFolder: 0
       m_AbsolutePath: C:/Users/COMPUMAX/Desktop
-    m_FileName: escenario practica 01
+    m_FileName: Escenario Practica 2
   outputFormat: 0
   videoBitRateMode: 2
   captureAlpha: 0

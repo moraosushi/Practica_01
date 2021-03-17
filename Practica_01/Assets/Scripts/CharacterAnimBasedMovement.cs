@@ -12,8 +12,11 @@ public class CharacterAnimBasedMovement : MonoBehaviour
     public float degreesToTurn = 160f;
 
    
-    public int idleTime = 0;
-    //public Vector3 cameraPosition;
+   
+    public float idleTime = 0.0f;
+    public float randomTime;
+    public int randomIdle;
+ 
 
     [Header("Animator Parameters")]
     public string motionParam = "motion";
@@ -48,51 +51,48 @@ public class CharacterAnimBasedMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
-       // cameraPosition = Camera.main.transform.position;
-        //print(cameraPosition);
+        randomTime = Random.Range(15.0f, 40.0f);
+        randomIdle = Random.Range(1, 7);
+
     }
 
     public void moveCharacter(float hInput, float vInput, Camera cam, bool jump, bool dash)
     {
         //calculate the input magnitude
         Speed = new Vector2(hInput, vInput).normalized.sqrMagnitude;
-
+       
       //jump input
         if (jump)
         {
             animator.SetTrigger("jump");
-
+           
         }
         
-        //Vector3 newCameraPosition = Camera.main.transform.position;
-
-       //animaciones idle random en periodo de tiempo
-        if (!Input.anyKey) //|| newCameraPosition == cameraPosition
+        //animaciones idle random en periodo de tiempo
+        if (!Input.anyKey) 
         {
-            idleTime += 1;
-            print(idleTime);
+            idleTime += Time.deltaTime;
+           // print(idleTime);
             
         }
-       
         else
         {
-            idleTime = 0;
+            
+            idleTime = 0.0f;
+           
         }
-        //numero de animacion aleatorio
-        int randomIdle = Random.Range(1, 5);
-        
-
-        if (idleTime == Random.Range(165, 440)) //si el tiempo esta en x rango de tiempo aleatorio
+       
+        if (idleTime >= randomTime) //si el tiempo esta en x rango de tiempo aleatorio
         {
-            animator.SetTrigger("Idle_random"); //se hace el cambio a el submachine system de idles
+            animator.SetTrigger("Idle_random"); //se hace el cambio al submachine system de idles
             animator.SetInteger("IdleType", randomIdle); //usando el numero aleatorio anterior, se escoge una de las animaciones de idle
-            print("idle random");// para saber que si funciona
-            idleTime = 0;                  //el tiempo se reinicia
+            print("idle random");
+            print(idleTime);// para saber que si funciona
+            randomTime = Random.Range(15.0f, 40.0f); //asignar nuevo valor en el que se dara el idle
+            randomIdle = Random.Range(1, 7); //asignar nuevo valor de la animacion idle
+            idleTime = 0.0f;                  //el tiempo se reinicia
         }
-        else if (idleTime >= 440) //cuando se mueve la camara los idles no se hacen, asi que repetir el timer una vez se pase el maximo del rango de tiempo anterior
-        {
-            idleTime = 0;
-        }
+    
 
         //dash only if character has reached maxSpeed (animator parameter value)
         if (Speed >= Speed - rotationThreshold && dash)
@@ -131,7 +131,32 @@ public class CharacterAnimBasedMovement : MonoBehaviour
             //move character
             animator.SetFloat(motionParam, Speed, StartAnimTime, Time.deltaTime);
 
-          
+            // Wall Detection
+            Vector3 rayOriging = transform.position;
+            rayOriging.y += rayHeight;
+
+            wallRay.origin = rayOriging;
+            wallRay.direction = transform.forward;
+
+            bool wallDetected = Vector3.Angle(transform.forward, desiredMoveDirection) < wallStopThreshold && Physics.Raycast(wallRay, wallStopDistance, obstacleLayers);
+
+            Debug.DrawRay(rayOriging, transform.forward, Color.red);
+
+            if (wallDetected)
+            {
+                // Simple foot IK for idle animation
+                animator.SetBool(mirrorIdleParam, mirrorIdle);
+                // Stop the character
+                animator.SetFloat(motionParam, 0f);
+                animator.SetBool("turn180", true);
+                Debug.DrawRay(rayOriging, transform.forward, Color.yellow);
+            }
+            else
+            {
+                // Move the character
+                animator.SetFloat(motionParam, Speed, StartAnimTime, Time.deltaTime);
+            }
+                
         }
         else if (Speed < rotationThreshold)
         {
@@ -156,30 +181,6 @@ public class CharacterAnimBasedMovement : MonoBehaviour
         {
             mirrorIdle = false;
         }
-    }
- /*   void FixedUpdate()
-    {   //wall detection
-            Vector3 rayOrigin = transform.position;
-            rayOrigin.y += rayHeight;
-
-            wallRay.origin = rayOrigin;
-            wallRay.direction = transform.forward;
-            bool wallDetected = Vector3.Angle(transform.forward, desiredMoveDirection) < wallStopThreshold && Physics.Raycast(wallRay, wallStopDistance, obstacleLayers);
-            Debug.DrawRay(rayOrigin, transform.forward, Color.red);
-
-            if (wallDetected)
-            {
-                //simple foot ik for idle animation
-                animator.SetBool(mirrorIdleParam, mirrorIdle);
-                //Stop the character
-                animator.SetFloat(motionParam, 0f, StopAnimTime, Time.deltaTime);
-                Debug.DrawRay(rayOrigin, transform.forward, Color.yellow);
-            }
-            else
-        {//Move character
-                animator.SetFloat(motionParam, Speed, StartAnimTime, Time.deltaTime);
-        }
-    }*/
-       
+    }    
 }
 
