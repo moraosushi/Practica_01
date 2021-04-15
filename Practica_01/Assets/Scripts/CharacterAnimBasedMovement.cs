@@ -44,6 +44,7 @@ public class CharacterAnimBasedMovement : MonoBehaviour
     private Animator animator;
     private bool mirrorIdle;
     private bool turn180;
+
     
    
 
@@ -53,6 +54,7 @@ public class CharacterAnimBasedMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         randomTime = Random.Range(15.0f, 40.0f);
         randomIdle = Random.Range(1, 7);
+        //animator.SetTrigger("Inicio");
 
     }
 
@@ -62,25 +64,28 @@ public class CharacterAnimBasedMovement : MonoBehaviour
         Speed = new Vector2(hInput, vInput).normalized.sqrMagnitude;
        
       //jump input
-        if (jump)
+      
+        if (jump && characterController.isGrounded)
         {
             animator.SetTrigger("jump");
            
         }
         
         //animaciones idle random en periodo de tiempo
-        if (!Input.anyKey) 
+        if (!Input.anyKey) // || playableDirector.played necesito ver como hacer que el tiempo no se cuente mientras se ejecute el timeline
         {
             idleTime += Time.deltaTime;
            // print(idleTime);
             
         }
+       
         else
         {
             
             idleTime = 0.0f;
            
         }
+      
        
         if (idleTime >= randomTime) //si el tiempo esta en x rango de tiempo aleatorio
         {

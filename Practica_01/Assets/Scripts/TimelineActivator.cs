@@ -27,12 +27,24 @@ public class TimelineActivator : MonoBehaviour
     private bool playerInside; // determines if the player is inside of the trigger or not
     private Transform playerTransform; //reference to the player transform
 
+  /*  private GameObject npcGameObject;
+    private Animator npcAnimator;
+    private GameObject playerGameObject;
+    private Animator playerAnimator;*/
+
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag.Equals(playerTAG))
+        /*npcGameObject = GameObject.FindGameObjectWithTag("NPC");
+        npcAnimator = npcAnimator.GetComponent<Animator>();
+        playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        playerAnimator = playerGameObject.GetComponent<Animator>();*/
+
+        if (other.gameObject.tag.Equals(playerTAG))
         {
             playerInside = true;
             playerTransform = other.transform;
+            /*npcAnimator.animator.SetTrigger("Peasant_Interaction");
+            playerAnimator.animator.SetTrigger("Interaction");*/
             OnPlayerEnter.Invoke();
         }
     }
@@ -50,15 +62,24 @@ public class TimelineActivator : MonoBehaviour
     {
         //place the character at the correct interaction position
         if (playerTransform && interactionLocation)
-            playerTransform.SetPositionAndRotation(interactionLocation.position, interactionLocation.rotation);
+        {
+        playerTransform.SetPositionAndRotation(interactionLocation.position, interactionLocation.rotation);
+        }
+           
 
         //avoid infinite interaction loop
         if (autoActivate)
-            playerInside = false;
+        {
+        playerInside = false;
+        }
+           
 
         //play de timeline
         if (playableDirector)
-            playableDirector.Play();
+        {
+        playableDirector.Play();
+        }
+           
 
         //set variables
         isPlaying = true;
