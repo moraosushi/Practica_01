@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: rim_v2
+  m_Shader: {fileID: 4800000, guid: bbb0dc7bc4afbe549b6e2ff4afa21ccf, type: 3}
+  m_ShaderKeywords: _ENABLERIMLIGHT_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Bordertexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorDistortTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistortTex:
+        m_Texture: {fileID: 2800000, guid: 0fc1ecc8ebbb90c42b01fb6531956f11, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: bf7e1e4473013de429f860e2b8c7937c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Occlusion:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Secondaryemission:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Secondaryemissionnoise:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Specular:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Activateemission: 0
+    - _Activatesecondaryemission: 0
+    - _Borderwidth: 0
+    - _Cutoff: 0.5
+    - _Distort: 33.2
+    - _DistortColor: 0
+    - _DistortRotate: 14.48
+    - _Enablerimlight: 1
+    - _Fill: 0.31
+    - _Fresnel: 35.1
+    - _FresnelWidth: 1.356
+    - _IntersectionThreshold: 0
+    - _Invertmask: 0
+    - _Layernoise: 0
+    - _Noisescale: 0
+    - _Noisetexopacity: 1
+    - _Rimlightbias: 0
+    - _Rimlightpower: 1.78
+    - _Rimlightscale: 1
+    - _Rotate: 2.89
+    - _ScrollSpeed: 3.4
+    - _ScrollSpeedU: 1
+    - _ScrollSpeedV: 1
+    - _SecondaryEmissionDesaturation: 0
+    - _SecondaryEmissionNoiseDesaturation: 0
+    - _Smoothness: 0
+    - _TintStrengthen: 1
+    - _Tintinsidecolor: 1
+    - _Wave1amplitude: 0
+    - _Wave1frequency: 0
+    - _Wave1offset: 0
+    - _Wave2Frequency: 0
+    - _Wave2amplitude: 0
+    - _Wave2offset: 0
+    - _Worldcoordinates: 0
+    - __dirty: 1
+    m_Colors:
+    - _Basecolor: {r: 0, g: 0, b: 0, a: 1}
+    - _Bordercolor: {r: 0, g: 0, b: 0, a: 0}
+    - _Emissiontexspeed: {r: 0, g: 0, b: 0, a: 0}
+    - _Emissiontextiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Fillcolor: {r: 1, g: 0.5514706, b: 0.5514706, a: 1}
+    - _MainColor: {r: 0.16696332, g: 0.4004199, b: 0.5283019, a: 1}
+    - _Mainoffset: {r: 0, g: 0, b: 0, a: 0}
+    - _Maintiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Noisespeed: {r: 0, g: 0, b: 0, a: 0}
+    - _Noisetexspeed: {r: 0, g: 0, b: 0, a: 0}
+    - _Noisetextiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Rimlightcolor: {r: 0, g: 0.8344827, b: 1, a: 1}
+    - _Secondaryemissioncolor: {r: 1, g: 0.9724138, b: 0, a: 1}
+    - _Secondaryemissionspeed: {r: 0, g: 0, b: 0, a: 0}
+    - _Secondaryemissiontiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Tint: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
